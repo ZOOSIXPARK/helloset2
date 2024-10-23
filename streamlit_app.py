@@ -10,13 +10,19 @@ import plotly.io as pio
 # Streamlit 페이지 설정
 st.set_page_config(layout="wide", page_title="고객 종합 대시보드", page_icon="📊")
 
-# Streamlit 테마 설정
+# Streamlit 테마 설정 (흰색 테마)
 st.markdown("""
     <style>
     .reportview-container {
         background: white;
     }
-   .sidebar .sidebar-content {
+    .sidebar .sidebar-content {
+        background: white;
+    }
+    .st-bw {
+        background: white;
+    }
+    .st-at {
         background: white;
     }
     </style>
@@ -602,5 +608,6 @@ with tabs[3]:
 #- 상관계수 범위: -1 ~ +1
 #- P-value < 0.05: 통계적으로 유의미
 #""")
+
 
 
