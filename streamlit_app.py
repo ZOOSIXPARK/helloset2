@@ -215,11 +215,11 @@ st.markdown(kpi_html, unsafe_allow_html=True)
 st.header('2.고객 상세 분석')
 
 # 탭 생성
-tabs = st.tabs(['투자성향 분석', '연령대 분석', '지역 분석', '자산 분석'])
+tabs = st.tabs(['💰투자성향 분석', '👨연령대 분석', '🏙️지역 분석', '💵자산 분석'])
 
 # 투자성향 분석의 파이 차트 부분 수정
 with tabs[0]:
-    st.subheader('💰투자성향 분석')
+    st.subheader('투자성향 분석')
     col1, col2 = st.columns(2)
     
     with col1:
@@ -261,7 +261,7 @@ with tabs[0]:
     st.plotly_chart(fig_style_asset, use_container_width=True)
 
 with tabs[1]:
-    st.subheader('👨연령대 분석')
+    st.subheader('연령대 분석')
     col1, col2 = st.columns(2)
     
     with col1:
@@ -316,7 +316,7 @@ with tabs[1]:
     st.plotly_chart(fig_age_style, use_container_width=True)
 
 with tabs[2]:
-    st.subheader('🏙️지역별 분석')
+    st.subheader('지역별 분석')
     col1, col2 = st.columns(2)
     
     with col1:
@@ -389,7 +389,7 @@ with tabs[2]:
     st.plotly_chart(fig_region_style, use_container_width=True)
 
 with tabs[3]:
-    st.subheader('💵자산 규모별 분석')
+    st.subheader('자산 규모별 분석')
     col1, col2 = st.columns(2)
     
     with col1:
