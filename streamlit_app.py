@@ -5,34 +5,12 @@ import plotly.express as px
 import plotly.graph_objects as go
 from sklearn.cluster import KMeans
 from scipy import stats
-import plotly.io as pio
 
-# Streamlit 페이지 설정
-st.set_page_config(layout="wide", page_title="고객 종합 대시보드", page_icon="📊")
-
-# Streamlit 테마 설정 (흰색 테마)
-st.markdown("""
-    <style>
-    .reportview-container {
-        background: white;
-    }
-    .sidebar .sidebar-content {
-        background: white;
-    }
-    .st-bw {
-        background: white;
-    }
-    .st-at {
-        background: white;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-# Plotly 기본 테마 설정
-pio.templates.default = "plotly_white"
+# 페이지 설정
+st.set_page_config(layout="wide", page_title="고객 종합 대시보드")
 
 # 공통 차트 스타일 설정
-CHART_THEME = 'plotly_white'
+CHART_THEME = 'seaborn'
 COLOR_PALETTE = px.colors.qualitative.Set3
 TEMPLATE = 'plotly_white'
 
@@ -51,9 +29,7 @@ def get_chart_layout(title='', legend_position='default'):
         font=dict(family="Malgun Gothic", size=12),
         margin=dict(t=50, l=50, r=50, b=50),
         height=500,  # 모든 차트의 높이를 500px로 통일
-        showlegend=True,
-        plot_bgcolor='rgba(0,0,0,0)',
-        paper_bgcolor='rgba(0,0,0,0)'
+        showlegend=True
     )
     
     if legend_position == 'default':
@@ -608,6 +584,4 @@ with tabs[3]:
 #- 상관계수 범위: -1 ~ +1
 #- P-value < 0.05: 통계적으로 유의미
 #""")
-
-
 
