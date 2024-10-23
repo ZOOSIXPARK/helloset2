@@ -7,7 +7,30 @@ from sklearn.cluster import KMeans
 from scipy import stats
 
 # 페이지 설정
-st.set_page_config(layout="wide", page_title="고객 종합 대시보드")
+st.set_page_config(
+    page_title="고객 종합 대시보드",
+    page_icon="📊",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://www.extremelycoolapp.com/help',
+        'Report a bug': "https://www.extremelycoolapp.com/bug",
+        'About': "# 이 앱은 고객 데이터를 분석하고 시각화합니다."
+    }
+)
+
+# 테마 설정
+st.markdown("""
+    <style>
+        .reportview-container {
+            background: white;
+        }
+        .main .block-container {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+    </style>
+    """, unsafe_allow_html=True)
 
 # 공통 차트 스타일 설정
 CHART_THEME = 'seaborn'
@@ -243,7 +266,7 @@ with tabs[1]:
     
     with col1:
         # 연령대별 평균 자산 규모
-        age_asset_avg = data.groupby('연령대')['총평가금액'].mean().sort_values(ascending=False)
+        age_asset_avg = data.groupby('연령대')['총���가금액'].mean().sort_values(ascending=False)
         fig_age_asset = px.bar(
             x=age_asset_avg.index,
             y=age_asset_avg.values,
@@ -584,4 +607,5 @@ with tabs[3]:
 #- 상관계수 범위: -1 ~ +1
 #- P-value < 0.05: 통계적으로 유의미
 #""")
+
 
