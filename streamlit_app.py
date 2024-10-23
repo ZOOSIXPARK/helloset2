@@ -266,7 +266,7 @@ with tabs[1]:
     
     with col1:
         # 연령대별 평균 자산 규모
-        age_asset_avg = data.groupby('연령대')['총���가금액'].mean().sort_values(ascending=False)
+        age_asset_avg = data.groupby('연령대')['총평가금액'].mean().sort_values(ascending=False)
         fig_age_asset = px.bar(
             x=age_asset_avg.index,
             y=age_asset_avg.values,
@@ -607,5 +607,6 @@ with tabs[3]:
 #- 상관계수 범위: -1 ~ +1
 #- P-value < 0.05: 통계적으로 유의미
 #""")
+
 
 
